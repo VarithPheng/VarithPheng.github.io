@@ -8,6 +8,20 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------*/
+let likeCount = localStorage.getItem('likeCount') ? parseInt(localStorage.getItem('likeCount')) : 0;
+
+document.getElementById('likeCount').innerText = likeCount;
+
+function incrementLikes() {
+    likeCount++;
+    document.getElementById('likeCount').innerText = likeCount;
+    localStorage.setItem('likeCount', likeCount);
+}
+function resetLikes() {
+    likeCount = 0;
+    document.getElementById('likeCount').innerText = likeCount;
+    localStorage.setItem('likeCount', likeCount);
+}
 
 
 $(function () {
